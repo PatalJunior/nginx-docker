@@ -29,5 +29,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Watchtower Update') {
+            steps {
+                script {
+                    sh 'curl -H "Authorization: Bearer patalToken" 192.168.1.115:8080/v1/update'
+                }
+            }
+        }
     }
 }
